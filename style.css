@@ -1101,14 +1101,35 @@ h1 {
 }
 
 @media (max-width: 759px) {
+  .blog-card {
+    padding: 24px 18px;
+    border-radius: 24px;
+  }
   .blog-memory-aside {
     position: static;
+  }
+  .blog-memory-aside .blog-memory-photo img {
+    aspect-ratio: 4 / 3;
+    max-height: 380px;
   }
   .story-photo-duo {
     grid-template-columns: 1fr;
   }
+  .memory-gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+  .memory-grid-item:last-child:nth-child(odd) {
+    grid-column: span 2;
+  }
   .memory-grid-item img {
-    height: 150px;
+    height: 140px;
+  }
+  .memory-quote-box {
+    padding: 18px 16px;
+  }
+  .memory-quote-box p {
+    font-size: 16px !important;
   }
 }
 
@@ -1197,6 +1218,14 @@ button {
 .reveal.visible {
   opacity: 1;
   transform: translateY(0) scale(1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
 }
 
 @media (min-width: 760px) {

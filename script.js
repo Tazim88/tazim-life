@@ -25,16 +25,17 @@ skills.forEach((skill) => {
 });
 
 const observer = new IntersectionObserver(
-  (entries) => {
+  (entries, obs) => {
     entries.forEach((entry) => {
       if (!entry.isIntersecting) return;
       entry.target.classList.add("visible");
       if (entry.target.classList.contains("skill")) {
         entry.target.classList.add("animated");
       }
+      obs.unobserve(entry.target);
     });
   },
-  { threshold: 0.18 }
+  { threshold: 0, rootMargin: "0px 0px -20px 0px" }
 );
 
 revealItems.forEach((item) => observer.observe(item));
