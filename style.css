@@ -703,6 +703,12 @@ h1 {
   border-radius: 34px;
 }
 
+.blog-section {
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+}
+
 .blog-card {
   padding: 32px;
   border: 1px solid var(--line);
@@ -808,6 +814,304 @@ h1 {
   color: var(--text);
   font-weight: 800;
 }
+
+/* Third blog post custom styles */
+.third-memory-card {
+  position: relative;
+  border-color: rgba(255, 209, 102, 0.28);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.16), rgba(255, 209, 102, 0.04), rgba(255, 95, 162, 0.05));
+}
+
+.third-memory-card .blog-topic {
+  color: var(--gold);
+}
+
+.blog-memory-aside {
+  position: sticky;
+  top: 104px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.blog-memory-aside .blog-memory-photo {
+  position: static;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.blog-memory-aside .blog-memory-photo:hover {
+  transform: scale(1.02);
+}
+
+.memory-thumb-row {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 8px;
+}
+
+.thumb-btn {
+  padding: 0;
+  border: 2px solid var(--line);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.06);
+  cursor: pointer;
+  overflow: hidden;
+  aspect-ratio: 1;
+  transition: all 0.25s ease;
+}
+
+.thumb-btn img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.thumb-btn:hover {
+  border-color: var(--gold);
+  transform: translateY(-2px);
+}
+
+.thumb-btn.active {
+  border-color: var(--pink);
+  box-shadow: 0 0 14px rgba(255, 95, 162, 0.45);
+}
+
+.thumb-hint {
+  font-size: 12px;
+  color: var(--gold);
+  text-align: center;
+  opacity: 0.85;
+}
+
+.story-photo-duo {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin: 22px 0 26px;
+}
+
+.story-photo-card {
+  position: relative;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.05);
+  cursor: pointer;
+  transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+}
+
+.story-photo-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(255, 209, 102, 0.5);
+  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.4);
+}
+
+.story-photo-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.45s ease;
+}
+
+.story-photo-card:hover img {
+  transform: scale(1.05);
+}
+
+.story-photo-card figcaption {
+  padding: 10px 14px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--gold);
+  text-align: center;
+  background: rgba(8, 10, 22, 0.78);
+  font-family: "Hind Siliguri", sans-serif;
+}
+
+.memory-quote-box {
+  margin: 28px 0 20px;
+  padding: 22px 26px;
+  border-left: 4px solid var(--gold);
+  border-radius: 0 20px 20px 0;
+  background: linear-gradient(90deg, rgba(255, 209, 102, 0.14), rgba(255, 95, 162, 0.06));
+  position: relative;
+}
+
+.memory-quote-box::before {
+  content: "“";
+  position: absolute;
+  top: -8px;
+  left: 10px;
+  font-size: 44px;
+  color: rgba(255, 209, 102, 0.28);
+  font-family: Georgia, serif;
+  line-height: 1;
+}
+
+.memory-quote-box p {
+  margin: 0 !important;
+  color: #fff !important;
+  font-size: 18px !important;
+  font-weight: 600;
+  line-height: 1.85;
+  font-family: "Hind Siliguri", sans-serif;
+}
+
+.memory-gallery-showcase {
+  margin-top: 36px;
+  padding-top: 28px;
+  border-top: 1px solid var(--line);
+}
+
+.memory-gallery-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 18px;
+  color: var(--gold);
+  font-size: 15px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.memory-gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 14px;
+}
+
+.memory-grid-item {
+  position: relative;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.05);
+  cursor: pointer;
+  transition: all 0.35s ease;
+}
+
+.memory-grid-item:hover {
+  transform: translateY(-5px);
+  border-color: rgba(255, 209, 102, 0.6);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.45);
+}
+
+.memory-grid-item img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.45s ease;
+}
+
+.memory-grid-item:hover img {
+  transform: scale(1.08);
+}
+
+.memory-grid-item .item-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 40%, rgba(7, 9, 20, 0.92) 100%);
+  display: flex;
+  align-items: flex-end;
+  padding: 12px;
+  transition: background 0.3s ease;
+}
+
+.memory-grid-item .item-title {
+  color: #fff;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.4;
+  font-family: "Hind Siliguri", sans-serif;
+}
+
+/* Lightbox modal */
+.lightbox-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: rgba(4, 6, 15, 0.94);
+  backdrop-filter: blur(14px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.lightbox-modal.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.lightbox-content {
+  position: relative;
+  max-width: 920px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.lightbox-img {
+  max-width: 100%;
+  max-height: 75vh;
+  border-radius: 18px;
+  border: 1px solid var(--line);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
+  object-fit: contain;
+}
+
+.lightbox-caption {
+  margin-top: 14px;
+  color: var(--gold);
+  font-size: 15px;
+  font-weight: 600;
+  text-align: center;
+  font-family: "Hind Siliguri", sans-serif;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: -42px;
+  right: 0;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid var(--line);
+  color: #fff;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  font-size: 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.lightbox-close:hover {
+  background: var(--pink);
+  transform: rotate(90deg);
+}
+
+@media (max-width: 759px) {
+  .blog-memory-aside {
+    position: static;
+  }
+  .story-photo-duo {
+    grid-template-columns: 1fr;
+  }
+  .memory-grid-item img {
+    height: 150px;
+  }
+}
+
 
 .style-card p:last-child {
   max-width: 720px;
