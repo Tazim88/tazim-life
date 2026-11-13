@@ -1,0 +1,8 @@
+{
+    "chat.tools.terminal.autoApprove": {
+        "/^git push --dry-run origin main; if \\(\\$\\?\\) \\{ git push origin main \\}$/": {
+            "approve": true,
+            "matchCommandLine": true
+        }
+    }
+}
