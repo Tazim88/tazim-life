@@ -40,6 +40,26 @@ const observer = new IntersectionObserver(
 
 revealItems.forEach((item) => observer.observe(item));
 
+// Fallback check to guarantee visibility on mobile browsers
+function checkRevealInView() {
+  const windowH = window.innerHeight || document.documentElement.clientHeight;
+  revealItems.forEach((item) => {
+    if (!item.classList.contains("visible")) {
+      const rect = item.getBoundingClientRect();
+      if (rect.top < windowH + 60 && rect.bottom > -60) {
+        item.classList.add("visible");
+        if (item.classList.contains("skill")) {
+          item.classList.add("animated");
+        }
+      }
+    }
+  });
+}
+window.addEventListener("scroll", checkRevealInView, { passive: true });
+window.addEventListener("resize", checkRevealInView, { passive: true });
+setTimeout(checkRevealInView, 500);
+setTimeout(checkRevealInView, 1500);
+
 window.addEventListener("pointermove", (event) => {
   const x = Math.round((event.clientX / window.innerWidth) * 100);
   const y = Math.round((event.clientY / window.innerHeight) * 100);
